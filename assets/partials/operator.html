@@ -1,0 +1,25 @@
+<div class="container" >
+
+  <!-- HEADER AND Service Providers COUNT -->
+  <div class="jumbotron text-center">
+    <h1>I'm am looking for Operator with name  <span class="label label-info">{{ operator.name }}</span>
+    </h1>
+  </div>
+  <!-- FORM TO EDIT Service Provider -->
+  <div id="operator-form" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <form>
+        <div class="form-group">
+          <input type="text" ng-model="operator._id" disabled>
+          <input type="text" ng-model="operator.name" class="form-control input-lg text-center"
+                 placeholder="name">
+          <input type="text" ng-model="operator.description" class="form-control input-lg"
+                 placeholder="description">
+        </div>
+        <button ng-disabled="buttonDisabled" type="submit" class="btn btn-primary btn-lg"
+                ng-click="editOperator()">Edit</button>
+      </form>
+    </div>
+  </div>
+
+</div>

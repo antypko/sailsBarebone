@@ -1,0 +1,43 @@
+<!--<div class="container" ng-controller="serviceProvidersController">-->
+<div class="container">
+  <!-- HEADER AND Service Providers COUNT -->
+  <div class="jumbotron text-center">
+    <h1>I'm am searching for operators <span class="label label-info">{{ operators.length }}</span>
+    </h1>
+  </div>
+
+  <!-- Service Providers LIST -->
+  <div id="sp-list" class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+      <!-- LOOP OVER THE Service Providers IN $scope.serviceProviders -->
+      <!--<div class="checkbox" ng-repeat="serviceProvider in serviceProviders">-->
+      <ul>
+        <li ng-repeat="operator in operators">
+          <label>
+            <a href="operator/{{operator._id}}">{{ operator.name }}</a>
+            <!--<input type="button" value="edit" ng-click="editServiceProvider(serviceProvider._id)">-->
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FORM TO CREATE Service Providers -->
+  <div id="service_provider-form" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <form>
+        <div class="form-group">
+
+          <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+          <input type="text" class="form-control input-lg text-center" placeholder="Vasia"
+                 ng-model="formData.name">
+        </div>
+
+        <!-- createToDo() WILL CREATE NEW Service Providers -->
+        <button ng-disabled="!formData.name.length || buttonDisabled" type="submit" class="btn btn-primary btn-lg" ng-click="createOperator()">Add</button>
+      </form>
+    </div>
+  </div>
+
+</div>
